@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VNUIS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="../js/jquery-3.1.1.js" type="text/javascript"></script>
+	<script src="../js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+	<script src="../js/jquery-func.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-top: 3px;height: 125px">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 clearpadding">
+				<a href="#"><img src="data:image/jpeg;base64,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" alt="" class="img-responsive"></a> 
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 clearpadding">
+				<a href="#"><img src="" alt="" class="img-responsive"></a> <!-- thêm banner website vào đây -->
+			</div>
+		</div>
+		<div class="row">
+			<nav class="navbar navbar-info re-navbar" >
+			  <div class="container-fluid re-container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      	<a class="navbar-brand" href="#">--- Menu ---</a>
+			    </div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse re-navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> HOME<span class="sr-only">(current)</span></a></li>
+			        <li><a href="#">Bán chạy</a></li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Danh Mục<span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Thời Trang</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">Đồ Gia Dung</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">Sản phẩm khác</a></li>
+						<li role="separator" class="divider"></li>
+			          
+			          </ul>
+			        </li>
+			        <li><a href="#">Khuyến mại</a></li>
+			        <li><a href="#">Liên hệ</a></li>
+			        <li><a href="#">Giỏ hàng</a></li>
+			       </ul>
+			      <ul class="nav navbar-nav navbar-right">
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"><span class="badge">2</span></span> Giỏ Hàng<span class="caret"></span></a>
+			          <ul class="dropdown-menu" style="width: 350px;">
+			            <div class="table-responsive">
+		                     <table class="table table-hover">
+		                      <thead>
+		                      <tr>
+		                        <th>Ảnh</th>
+		                        <th>LS</th>
+		                        <th>Tên <span></span></th>
+		                        <th>Giá</th>
+		                      </tr>
+		                    </thead>
+		                       <tbody>                       
+		                         <tr>
+		                           <td>  <img style="width: 40px;border-radius: 30%;" src="https://thudaumot.edu.vn/wp-content/uploads/2021/04/Banner-quang-cao-may-tinh-3.jpg" alt=""></td>
+		                           <td>1</td>
+		                           <td>Áo sơ mi nữ</td>                           
+		                           <td>180.000 VNĐ</td>
+		                         </tr>                         
+		                       </tbody>                       
+		                     </table> 
+		                     <a href="http://localhost/myshop/gio-hang" type="button" class="btn btn-success"> Chi Tiết Giỏ Hàng </a>
+		                     <a href="http://localhost/myshop/gio-hang/xoa" type="button" class="btn btn-danger pull-right"> Xóa </a>
+		                  </div>
+			          </ul>
+			        </li>
+			        <li><a href="#">Đăng nhập</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			    
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+		<div class="row">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			  </ol>
+
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="../upload/slide1.png" alt="...">
+			      <div class="carousel-caption">
+			      </div>
+			    </div>
+			    
+			    <div class="item">
+			      <img src="../upload/slide3.jpg" alt="...">
+			      <div class="carousel-caption">
+			      </div>
+			    </div>
+			  </div>
+
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+		   </div>
+		</div>
+		<div class="row">
+				<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title text-center"><img src="../upload/icon/new.gif" alt=""><a href="" class='product_title'>Sản phẩm mới </a><img src="../upload/icon/new.gif" alt=""></h3>
+				  </div>
+				  <div class="panel-body">
+				  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
+				  		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Điện thoại iPhone 12 Pro Max 256GB – Like New 99</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://www.techone.vn/wp-content/uploads/2021/09/xanh-1-500x500.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>21.790.000 VNĐ</span> <del class="product-discount">23.500.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">ÁO SƠ MI NAM SUTDR DÀI TAY - ĐỒ CÔNG SỞ </a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://188.com.vn/uploads/ao-so-mi-nam-do-cong-a6510.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>1.100.000 VNĐ</span> <del class="product-discount">1.250.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Máy ảnh Canon EOS 250D kit EF-S18-55mm F4-5.6 IS STM/Đen</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://kyma.vn/StoreData/images/Product/may-anh-canon-eos-250d-kit-ef-s18-55mm-f4-5-6-is-stm(1).webp" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>16.500.000 VNĐ</span> <del class="product-discount">18.000.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Balo The North face chống nước</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://phuotbuistore.com/wp-content/uploads/2019/07/856652-1.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>350.000 VNĐ</span> <del class="product-discount">500.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>	
+				  	</div>
+				  </div>
+				</div>	
+			</div>
+			<div class="row">
+				<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title text-center"><img src="../upload/icon/new.gif" alt=""><a href="" class='product_title'>Sản phẩm mới </a><img src="../upload/icon/new.gif" alt=""></h3>
+				  </div>
+				  <div class="panel-body">
+				  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
+				  		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Máy tính bảng Samsung Galaxy Tab S8</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://cdn.tgdd.vn/Products/Images/522/247510/samsung-galaxy-tab-s8-white-1.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>21.790.000 VNĐ</span> <del class="product-discount">23.500.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Máy in màu Laser HP 150a (4ZB94A)</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://cdn.tgdd.vn/Products/Images/5693/270177/mau-laser-hp-150a-4zb94a-3.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>4.100.000 VNĐ</span> <del class="product-discount">4.250.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Mắt kính thời trang Nữ Polaroid PLD4056S_58_01Q_LA</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://cdn.tgdd.vn/Products/Images/7678/253919/mat-kinh-thoi-trang-nu-polaroid-pld4056s5801qla-vang-1-2.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>1.500.000 VNĐ</span> <del class="product-discount">1.990.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Đế điện thoại xe hơi Vent mount Pro With MagSafe Belkin WIC002btGR Bạc</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://cdn.tgdd.vn/Products/Images/6862/251586/de-dien-thoai-xe-hoi-vent-mount-pro-with-magsafe-belkin-wic002btgr-bac-1.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>350.000 VNĐ</span> <del class="product-discount">500.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>	
+				  	</div>
+				  </div>
+				</div>	
+			</div>
+		
+		<div class="row">
+				<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title text-center"><img src="../upload/icon/hot.gif" alt=""><a href="" class='product_title'>Sản phẩm bán chạy</a><img src="../upload/icon/hot.gif" alt=""></h3>
+				  </div>
+				  <div class="panel-body">
+				  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
+				  		<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Smart Tivi Sony 4K 85 inch KD-85X86J</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://dienmayht.com/wp-content/uploads/2021/07/1-1-org.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>42.950.000 VNĐ</span> <del class="product-discount">49.750.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Áo sơ mi nam hàng hiệu công sở Burberry màu đen</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://1.bp.blogspot.com/-aDpz9JlLOHc/YHqqE_ROw9I/AAAAAAAAU-0/ZHRtC8LCAyULHGwr96hNGwlmCqLSb5UlgCLcBGAsYHQ/s0/Ao-so-mi-nam-hang-hieu-cong-so-Burberry-mau-den-ke-soc-van-chim-ngan-tay-hang-hieu-cong-so-sieu-cap-2.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>1.800.000 VNĐ</span> <del class="product-discount">2.050.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Ống nhòm ZT8-24X40M - Nga chính hãng</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://mezoom.net/wp-content/uploads/2018/11/ong-nhom-Zt8-24x40m-4-510x510.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>2.200.000 VNĐ</span> <del class="product-discount">2.500.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				  			<div class="product_item">
+				  				<p><a href="" class="product_name">Kính hiển vi soi nổi 2 mắt MCS-45</a></p>
+				  				<div class="product-image">
+				  					<a href=""><img src="https://maydochuyendung.com/img/uploads/cache_image/500x-mcs_45_1.jpg" alt="" class=""></a>
+				  				</div>
+								<p><span class='price text-right'>22.000.000 VNĐ</span> <del class="product-discount">25.000.000 VNĐ</del></p>
+								<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+				  			</div>
+						</div>
+				  	</div>  
+				  </div>
+				
+			
+				  <div class="panel panel-info">
+					<div class="panel-heading">
+					  <h3 class="panel-title text-center"><img src="../upload/icon/new.gif" alt=""><a href="" class='product_title'>Sản phẩm mới </a><img src="../upload/icon/new.gif" alt=""></h3>
+					</div>
+					<div class="panel-body">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="product_item">
+									<p><a href="" class="product_name">Máy tính bảng Samsung Galaxy Tab S8</a></p>
+									<div class="product-image">
+										<a href=""><img src="https://cdn.tgdd.vn/Products/Images/522/247510/samsung-galaxy-tab-s8-white-1.jpg" alt="" class=""></a>
+									</div>
+								  <p><span class='price text-right'>21.790.000 VNĐ</span> <del class="product-discount">23.500.000 VNĐ</del></p>
+								  <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								  <a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								</div>
+						  </div>
+						  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="product_item">
+									<p><a href="" class="product_name">Máy in màu Laser HP 150a (4ZB94A)</a></p>
+									<div class="product-image">
+										<a href=""><img src="https://cdn.tgdd.vn/Products/Images/5693/270177/mau-laser-hp-150a-4zb94a-3.jpg" alt="" class=""></a>
+									</div>
+								  <p><span class='price text-right'>4.100.000 VNĐ</span> <del class="product-discount">4.250.000 VNĐ</del></p>
+								  <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								  <a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								</div>
+						  </div>
+						  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="product_item">
+									<p><a href="" class="product_name">Mắt kính thời trang Nữ Polaroid PLD4056S_58_01Q_LA</a></p>
+									<div class="product-image">
+										<a href=""><img src="https://cdn.tgdd.vn/Products/Images/7678/253919/mat-kinh-thoi-trang-nu-polaroid-pld4056s5801qla-vang-1-2.jpg" alt="" class=""></a>
+									</div>
+								  <p><span class='price text-right'>1.500.000 VNĐ</span> <del class="product-discount">1.990.000 VNĐ</del></p>
+								  <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								  <a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								</div>
+						  </div>
+						  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								<div class="product_item">
+									<p><a href="" class="product_name">Đế điện thoại xe hơi Vent mount Pro With MagSafe Belkin WIC002btGR Bạc</a></p>
+									<div class="product-image">
+										<a href=""><img src="https://cdn.tgdd.vn/Products/Images/6862/251586/de-dien-thoai-xe-hoi-vent-mount-pro-with-magsafe-belkin-wic002btgr-bac-1.jpg" alt="" class=""></a>
+									</div>
+								  <p><span class='price text-right'>350.000 VNĐ</span> <del class="product-discount">500.000 VNĐ</del></p>
+								  <p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+								  <a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								</div>
+						  </div>	
+						</div>
+					</div>
+				  </div>
+
+
+			
+					<div class="panel panel-info">
+					  <div class="panel-heading">
+						<h3 class="panel-title text-center"><img src="../upload/icon/hot.gif" alt=""><a href="" class='product_title'>Sản phẩm bán chạy</a><img src="../upload/icon/hot.gif" alt=""></h3>
+					  </div>
+					  <div class="panel-body">
+						  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 clearpadding">
+							  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								  <div class="product_item">
+									  <p><a href="" class="product_name">Smart Tivi Sony 4K 85 inch KD-85X86J</a></p>
+									  <div class="product-image">
+										  <a href=""><img src="https://dienmayht.com/wp-content/uploads/2021/07/1-1-org.jpg" alt="" class=""></a>
+									  </div>
+									<p><span class='price text-right'>42.950.000 VNĐ</span> <del class="product-discount">49.750.000 VNĐ</del></p>
+									<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+									<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								  </div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								  <div class="product_item">
+									  <p><a href="" class="product_name">Áo sơ mi nam hàng hiệu công sở Burberry màu đen</a></p>
+									  <div class="product-image">
+										  <a href=""><img src="https://1.bp.blogspot.com/-aDpz9JlLOHc/YHqqE_ROw9I/AAAAAAAAU-0/ZHRtC8LCAyULHGwr96hNGwlmCqLSb5UlgCLcBGAsYHQ/s0/Ao-so-mi-nam-hang-hieu-cong-so-Burberry-mau-den-ke-soc-van-chim-ngan-tay-hang-hieu-cong-so-sieu-cap-2.jpg" alt="" class=""></a>
+									  </div>
+									<p><span class='price text-right'>1.800.000 VNĐ</span> <del class="product-discount">2.050.000 VNĐ</del></p>
+									<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+									<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								  </div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								  <div class="product_item">
+									  <p><a href="" class="product_name">Ống nhòm ZT8-24X40M - Nga chính hãng</a></p>
+									  <div class="product-image">
+										  <a href=""><img src="https://mezoom.net/wp-content/uploads/2018/11/ong-nhom-Zt8-24x40m-4-510x510.jpg" alt="" class=""></a>
+									  </div>
+									<p><span class='price text-right'>2.200.000 VNĐ</span> <del class="product-discount">2.500.000 VNĐ</del></p>
+									<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+									<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								  </div>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+								  <div class="product_item">
+									  <p><a href="" class="product_name">Kính hiển vi soi nổi 2 mắt MCS-45</a></p>
+									  <div class="product-image">
+										  <a href=""><img src="https://maydochuyendung.com/img/uploads/cache_image/500x-mcs_45_1.jpg" alt="" class=""></a>
+									  </div>
+									<p><span class='price text-right'>22.000.000 VNĐ</span> <del class="product-discount">25.000.000 VNĐ</del></p>
+									<p><span class="glyphicon glyphicon-eye-open" aria-hidden="true" title="Số lượt xem"></span> 190 <span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="Số lượng đặt mua">9</p>
+									<a href=""><button class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm giỏ hàng</button></a>
+								  </div>
+							</div>
+						  </div>  
+					  </div>
+			</div>
+
+					
+
+
+
+			
+		<div class="row" id="bank">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 no-padding">
+				    <div class="footer-info">            
+				      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				        <a href="" title=""><strong>THÀNH VIÊN NHÓM</strong></a>
+				          <li> <a href="#" title="">ĐỖ VĂN QUÝ</a></li> 
+				          <li> <a href="#" title="">NGUYỄN THỊ THANH NGÂN</a></li> 
+				          <li> <a href="#" title="">TẠ QUỐC TUẤN</a></li> 
+						  <li> <a href="#" title="">PHẠM ĐỨC HIẾU</a></li> 
+				          <li> <a href="#" title="">NGUYỄN THỊ KIỂU TRANG</a></li> 
+				          <li> <a href="#" title="">LÃ VĂN THÁI</a></li>
+				      </div>
+				      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				        <a href="" title=""><strong>SẢN PHẨM CHÚNG TÔI CÓ</strong></a>
+				          <li> <a href="#" title="">THỜI TRANG</a></li> 
+				          <li> <a href="#" title="">ĐỒ GIA DỤNG</a></li> 
+				          <li> <a href="#" title="">ĐỒ ĐIỆN TỬ</a></li> 
+						  <li> <a href="#" title="">ĐỒ NỘI THẤT</a></li> 
+				          <li> <a href="#" title="">ĐỒ DÙNG HỌC TẬP</a></li> 
+				          <li> <a href="#" title="">KHÁC</a></li>
+				      </div>
+				      <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				        <a href="" title=""><strong>CHÍNH SÁCH</strong></a>                
+				          <li> <a href="#" title="">Kiểm tra hàng chính hãng</a></li> 
+				          <li> <a href="#" title="">Máy đổi trả</a></li> 
+				          <li> <a href="#" title="">Hệ thống cửa hàng</a></li> 
+				      </div>
+				    </div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+				    <p>Hỗ trợ thanh toán  <img src="http://localhost/myshop/public/images/pay.png" alt="" style="padding-left: 25px;"> </p>
+				    <div class="fi-left pull-left">
+				      <p><small>Tư vẫn miễn phí (24/7)</small></p> 
+				      <strong>0377229312</strong>
+				    </div>
+				     <div class="fi-right pull-right">
+				      <p><small>Góp ý, phản ánh(8h00 - 22h00)</small></p>
+				      <strong>0377229312</strong>
+				    </div>
+				  </div>
+			</div>
+		</div>
+		<div class="row" id="footer">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+					<address>
+					  <strong>BÀI TẬP CUỐI KỲ</strong><br>
+					  <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Địa chỉ: Ngụy Như - KonTum - Thanh Xuân - Hà Nội<br>
+					  <span class="glyphicon glyphicon-phone" aria-hidden="true"></span> Điện thoại: 0123456789<br>
+					  Copyright - Design by Do Van Quy
+					</address>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 text-right">
+					<a href="#"><img src="../upload/icon/facebook.png" alt=""></a>
+					<a href="#"><img src="../upload/icon/twitter.png" alt=""></a>
+					<a href="#"><img src="../upload/icon/google.png" alt=""></a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
